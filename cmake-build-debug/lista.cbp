@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="lista"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lista">
+				<Option output="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/lista" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 lista"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lista/fast">
+				<Option output="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/lista" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/marcodestefano/CLionProjects/lista/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 lista/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/CategoryProduct.cpp">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/CategoryProduct.h">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/Lista.cpp">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/Lista.h">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/Product.cpp">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/Product.h">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/Utente.cpp">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/Utente.h">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/main.cpp">
+			<Option target="lista"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/CLionProjects/lista/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

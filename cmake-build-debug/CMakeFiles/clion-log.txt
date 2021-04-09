@@ -1,0 +1,8 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/marcodestefano/CLionProjects/lista
+CMake Error at CMakeLists.txt:7 (add_subdirectory):
+  add_subdirectory given source "test" which is not an existing directory.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/CMakeError.log".
