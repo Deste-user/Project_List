@@ -6,14 +6,31 @@
 #define LISTA_PRODUCT_H
 #include <string>
 #include "CategoryProduct.h"
+//Data Class
+using namespace std;
 
-class Product {
+class Product{
 public:
-    Product(std::string nm,int qt, CategoryProduct catg):name(nm),quantity(qt),category(catg){}
+    Product(string nm, CategoryProduct catg):name(nm),category(catg){}
+
+
+
+    //Getter&Setter
+    const CategoryProduct &getCategory() const;
+
+    void setCategory( CategoryProduct &category);
+
+    const string &getName() const;
+
+    void setName(const string &name);
+
+    int getQuantity() const;
+
+    void setQuantity(int quantity);
 
 private:
- std::string name;
-    int quantity;
+    string name;
+    int quantity=0;
     CategoryProduct category;
 };
 

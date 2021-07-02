@@ -4,11 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/marcodestefano/CLionProjects/lista/CategoryProduct.cpp" "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/lista.dir/CategoryProduct.cpp.o"
-  "/Users/marcodestefano/CLionProjects/lista/Lista.cpp" "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/lista.dir/Lista.cpp.o"
-  "/Users/marcodestefano/CLionProjects/lista/Product.cpp" "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/lista.dir/Product.cpp.o"
-  "/Users/marcodestefano/CLionProjects/lista/Utente.cpp" "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/lista.dir/Utente.cpp.o"
-  "/Users/marcodestefano/CLionProjects/lista/main.cpp" "/Users/marcodestefano/CLionProjects/lista/cmake-build-debug/CMakeFiles/lista.dir/main.cpp.o"
+  "/Users/marcodestefano/Documents/Clion_Projects/lista/Lista.cpp" "/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/lista.dir/Lista.cpp.o"
+  "/Users/marcodestefano/Documents/Clion_Projects/lista/Product.cpp" "/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/lista.dir/Product.cpp.o"
+  "/Users/marcodestefano/Documents/Clion_Projects/lista/Utente.cpp" "/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/lista.dir/Utente.cpp.o"
+  "/Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp" "/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/lista.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -18,6 +17,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/core.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

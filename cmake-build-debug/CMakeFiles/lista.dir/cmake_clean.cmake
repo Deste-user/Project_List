@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lista.dir/CategoryProduct.cpp.o"
   "CMakeFiles/lista.dir/Lista.cpp.o"
   "CMakeFiles/lista.dir/Product.cpp.o"
   "CMakeFiles/lista.dir/Utente.cpp.o"

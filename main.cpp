@@ -1,17 +1,32 @@
 #include <iostream>
 #include "Lista.h"
 #include "Utente.h"
+#include "CategoryProduct.h"
 int main() {
-    Utente a("Mario:");
-    std::cout<<"Inizio"<<std::endl;
-    a.add_list("Spesa");
-    a.add_list("Ikea");
-    a.add_list("Spesa nonna");
-    a.print_name_list();
-    std::cout<<"Fine:"<<std::endl;
-    a.remove_list("Ikea");
 
-    a.print_name_list();
+
+
+
+
+
+    Utente* user(new Utente("Mario"));
+    string nm="mamma";
+    user->Create_list(nm);
+    CategoryProduct Frutta("Frutta");
+    Product* mela(new Product("Mela",Frutta));
+    user->add_product_toList(mela,nm,4);
+    user->add_product_toList(mela,nm,4);
+    Product* pera(new Product("Pera",Frutta));
+    user->add_product_toList(pera,nm,2);
+    user->remove_product_toList(pera,nm,1);
+    //user->remove_product_toList(pera,nm,7);
+    Product* banana(new Product("Banana",Frutta));
+    user->add_product_toList(banana,nm,1);
+    user->remove_product_toList(banana,nm,1);
+
+
+
+
 
     return 0;
 }

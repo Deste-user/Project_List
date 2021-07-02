@@ -5,34 +5,52 @@
 #ifndef LISTA_LISTA_H
 #define LISTA_LISTA_H
 #include <string>
-#include <memory>
-#include <vector>
+#include <iostream>
+#include <list>
 #include "Product.h"
+#include "Subject.h"
+#include "Observer.h"
 
-class Lista {
+
+
+
+class Lista: public Subject {
 public:
-    explicit Lista(std::string nm):name_of_list(nm){}
+    explicit Lista(std::string nm):name_of_list(nm)  {}
+    void attach(Observer *A) override;
+    void dettach(Observer *B) override;
+    void notify() override;
 
-    int getNumOfElements() const {
-        return num_of_elements;
-    }
+    void add_to_list(Product *prod,int qty);
+    void rem_to_list(Product *prod, int qty_to_remove);
+    bool search_into_list(Product *prod);
+    void print_list();
 
-    void setNumOfElements(int numOfElements) {
-        num_of_elements = numOfElements;
-    }
 
-    const std::string &getNameOfList() const {
-        return name_of_list;
-    }
 
-    void setNameOfList(const std::string &nameOfList) {
-        name_of_list = nameOfList;
-    }
-    //implemento Observer
+    //Getter&Setter
+
+    const string &getNameOfList() const;
+
+    void setNameOfList(const string &nameOfList);
+
+    int getNumOfElements() const;
+
+    void setNumOfElements(int numOfElements);
+
+    const list<Product *> &getLst() const;
+
+    void setLst(const list<Product *> &lst);
+
+    const list<Observer *> &getObservers() const;
+
+    void setObservers(const list<Observer *> &observers);
+
 private:
     std::string name_of_list;
     int num_of_elements=0;
-    std::vector<std::unique_ptr<Product>> lst;
+    std::list<Product*> lst;
+   std::list<Observer* > observers;
 };
 
 

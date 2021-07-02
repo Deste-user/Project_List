@@ -9,25 +9,26 @@
 #include<memory>
 #include "Lista.h"
 #include "iostream"
+#include "Observer.h"
 using namespace std;
 
-class Utente {
+class  Utente: public Observer{
 public:
-    explicit Utente(std::string nm):name_of_utente(nm){}
-    void add_list(std::string name_lst);
-    bool search_list(std::string name);
-    void remove_list(std::string name);
-    void print_name_list(){
-        for(auto &iter: Elenco_Liste){
+    explicit Utente(string nm):name_of_utente(nm){}
+    void Create_list( string &name);
+    Lista* search_name_list(string &name);
+    void Delete_list(const string &name);
+    void Print_List();
+    void Update() override;
+    void add_product_toList(Product *product,string namelist,int qty);
+    void remove_product_toList(Product *product,string namelist,int qty);
 
-            std::cout<<iter->getNameOfList()<<std::endl;
-        }
-    };
 
 private:
     std::string name_of_utente;
-    std::list<std::unique_ptr<Lista>> Elenco_Liste;
+    std::list<Lista*> Elenco_Liste;
     int num_liste=0;
+    Lista *subject;
 };
 
 
