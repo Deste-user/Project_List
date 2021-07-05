@@ -11,5 +11,6 @@ public:
     virtual void dettach(Observer* B)=0;
     virtual void notify()=0;
 
+
 };
 #endif //LISTA_SUBJECT_H

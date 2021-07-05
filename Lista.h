@@ -25,6 +25,11 @@ public:
     void rem_to_list(Product *prod, int qty_to_remove);
     bool search_into_list(Product *prod);
     void print_list();
+    ~Lista() {
+        for(auto & i : lst){
+            delete i;
+        }
+    }
 
 
 
@@ -50,7 +55,7 @@ private:
     std::string name_of_list;
     int num_of_elements=0;
     std::list<Product*> lst;
-   std::list<Observer* > observers;
+   std::list<Observer*> observers;
 };
 
 

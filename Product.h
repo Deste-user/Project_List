@@ -16,6 +16,7 @@ public:
 
 
     //Getter&Setter
+
     const CategoryProduct &getCategory() const;
 
     void setCategory( CategoryProduct &category);
@@ -31,6 +32,7 @@ public:
 private:
     string name;
     int quantity=0;
+    //i cound use a string name to delete the useless class CategoryProduct
     CategoryProduct category;
 };
 

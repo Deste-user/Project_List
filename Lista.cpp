@@ -5,23 +5,31 @@
 #include "Lista.h"
 
 void Lista::add_to_list(Product *prod,int qty) {
+    if(qty>0){
     if (search_into_list(prod))
     {
-        for (auto i = lst.begin(); i != lst.end(); i++)
-        {
+        for (auto i = lst.begin(); i != lst.end(); i++){
             if ((*i)->getName() == prod->getName())
             {
                 (*i)->setQuantity(qty + (*i)->getQuantity());
             }
         }
     }
-    else{
-           prod->setQuantity(qty);
-           lst.push_back(prod);
-          }
+    else {
+        prod->setQuantity(qty);
+        lst.push_back(prod);
+    }
+    }else if (qty==0)
+        throw std::invalid_argument("Not enough quantity of Products ");
+    else
+        throw std::invalid_argument("Can't add a negative number of Products");
 }
 
+
+
+
 void Lista::rem_to_list(Product *prod, int qty_to_remove){
+    if(qty_to_remove>0){
     if(search_into_list(prod)) //controllo per vedere se c'è nella lista
     {
         for(auto i=lst.begin();i!=lst.end(); i++){
@@ -35,18 +43,21 @@ void Lista::rem_to_list(Product *prod, int qty_to_remove){
             }
         }
     }
+}else if(qty_to_remove==0){
+        throw std::invalid_argument("Can't remove zero product");
+    }else throw std::invalid_argument("Can't add product");
 }
 
 
 bool Lista::search_into_list(Product *prod) {
-    for(auto i=lst.begin();i!=lst.end();i++)
-    {
-        if((*i)->getName()==prod->getName())
-        {
-            return true;
+    if(prod!=nullptr) {
+        for (auto i = lst.begin(); i != lst.end(); i++) {
+            if ((*i)->getName() == prod->getName()) {
+                return true;
+            }
         }
-    }//std::cout<<"Nessuna prodotto con questo nome"<<std::endl;
-    return false;
+       return false;
+    } throw std::invalid_argument("Illegal address");
 }
 
 
@@ -77,7 +88,7 @@ void Lista::print_list()
     for (auto i:lst)
     {
 
-        std::cout<<i->getName()<<"        "<< i->getQuantity()<<std::endl;
+        std::cout<<i->getName()<<"->"<< i->getQuantity()<<std::endl;
     }
 }
 
@@ -89,12 +100,11 @@ void Lista::dettach(Observer *B) {
 observers.remove(B);
 }
 
-void Lista::notify() {
+void Lista::notify(){
 for (auto i: observers)
 {
     i->Update();
 }
-
 }
 
 const list<Product *> &Lista::getLst() const {

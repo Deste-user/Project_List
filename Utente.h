@@ -17,12 +17,17 @@ public:
     explicit Utente(string nm):name_of_utente(nm){}
     void Create_list( string &name);
     Lista* search_name_list(string &name);
-    void Delete_list(const string &name);
-    void Print_List();
+    //void Delete_list(const string &name);
+    //void Print_List();
     void Update() override;
     void add_product_toList(Product *product,string namelist,int qty);
     void remove_product_toList(Product *product,string namelist,int qty);
-
+    ~Utente(){
+        for(auto i=Elenco_Liste.begin();i!=Elenco_Liste.end();i++){
+            delete *i;
+        }
+        delete subject;
+    }
 
 private:
     std::string name_of_utente;

@@ -57,6 +57,16 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug"/>
 				<Option type="4"/>
@@ -107,18 +117,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="lista">
-				<Option output="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/lista" prefix_auto="0" extension_auto="0"/>
+			<Target title="Lista">
+				<Option output="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Lista" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -131,14 +131,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 lista"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lista"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="lista/fast">
-				<Option output="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/lista" prefix_auto="0" extension_auto="0"/>
+			<Target title="Lista/fast">
+				<Option output="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Lista" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -151,7 +151,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 lista/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lista/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -344,40 +344,40 @@
 		</Build>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/CategoryProduct.h">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Lista.cpp">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Lista.h">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Observer.h">
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Product.cpp">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Product.h">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Subject.h">
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Utente.cpp">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Utente.h">
 			<Option target="core"/>
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp">
-			<Option target="lista"/>
+			<Option target="Lista"/>
 		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/test/lib/googletest-master/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>

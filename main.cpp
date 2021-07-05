@@ -10,7 +10,7 @@ int main() {
 
 
     Utente* user(new Utente("Mario"));
-    string nm="mamma";
+    string nm="Per Nonna";
     user->Create_list(nm);
     CategoryProduct Frutta("Frutta");
     Product* mela(new Product("Mela",Frutta));
