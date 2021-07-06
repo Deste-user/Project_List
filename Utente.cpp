@@ -7,10 +7,9 @@
 
 void Utente::Create_list(string &name) {
     Lista* lst(new Lista(name));
-    lst->attach(this);
+    lst->subscribe(this);
     Elenco_Liste.push_back(lst);
     num_liste++;
-
 }
 
 
@@ -26,7 +25,7 @@ Lista* Utente::search_name_list(std::string &name)
             return i;
         }
     }
-    return 0;
+    return nullptr;
 }
 
 
@@ -85,5 +84,35 @@ void Utente::remove_product_toList(Product *product, string namelist, int qty) {
     }
     this->Update();
 
+}
+
+
+void Utente::attach(){
+    subject->subscribe(this);
+}
+void Utente::dettach() {
+    subject->unsubscribe(this);
+}
+
+
+Utente::~Utente() {
+    {
+        for(auto i=Elenco_Liste.begin();i!=Elenco_Liste.end();i++){
+            delete *i;
+        }
+        delete subject;
+    }
+}
+
+//Getter and Setter
+
+
+
+const string &Utente::getNameOfUtente() const {
+    return name_of_utente;
+}
+
+void Utente::setNameOfUtente(const string &nameOfUtente) {
+    name_of_utente = nameOfUtente;
 }
 

@@ -19,19 +19,20 @@ public:
     Lista* search_name_list(string &name);
     //void Delete_list(const string &name);
     //void Print_List();
+    void attach() override;
+    void dettach() override;
     void Update() override;
     void add_product_toList(Product *product,string namelist,int qty);
     void remove_product_toList(Product *product,string namelist,int qty);
-    ~Utente(){
-        for(auto i=Elenco_Liste.begin();i!=Elenco_Liste.end();i++){
-            delete *i;
-        }
-        delete subject;
-    }
+
+    const string &getNameOfUtente() const;
+    void setNameOfUtente(const string &nameOfUtente);
+
+    virtual ~Utente();
 
 private:
-    std::string name_of_utente;
-    std::list<Lista*> Elenco_Liste;
+    string name_of_utente;
+    list<Lista*> Elenco_Liste;
     int num_liste=0;
     Lista *subject;
 };

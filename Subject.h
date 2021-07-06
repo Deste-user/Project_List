@@ -7,10 +7,10 @@
 #include "Observer.h"
 class Subject{
 public:
-    virtual void attach(Observer* A )=0;
-    virtual void dettach(Observer* B)=0;
+    virtual void subscribe(Observer* A )=0;
+    virtual void unsubscribe(Observer* B)=0;
     virtual void notify()=0;
-
+    virtual ~Subject(){};
 
 };
 #endif //LISTA_SUBJECT_H

@@ -5,6 +5,8 @@
 #include "../Utente.h"
 
 TEST(Utente,DefaultCostructor){
-    Utente utent
+    Utente utente("Paolo");
+    EXPECT_EQ(utente.getNameOfUtente(),"Paolo");
+
 }
 

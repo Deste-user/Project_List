@@ -14,22 +14,19 @@
 
 
 
+
 class Lista: public Subject {
 public:
     explicit Lista(std::string nm):name_of_list(nm)  {}
-    void attach(Observer *A) override;
-    void dettach(Observer *B) override;
+    void subscribe(Observer *A) override;
+    void unsubscribe(Observer *B) override;
     void notify() override;
 
     void add_to_list(Product *prod,int qty);
     void rem_to_list(Product *prod, int qty_to_remove);
     bool search_into_list(Product *prod);
     void print_list();
-    ~Lista() {
-        for(auto & i : lst){
-            delete i;
-        }
-    }
+    virtual ~Lista();
 
 
 

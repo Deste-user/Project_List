@@ -4,9 +4,12 @@
 
 #ifndef LISTA_OBSERVER_H
 #define LISTA_OBSERVER_H
-#include "Subject.h"
+
 class Observer{
 public:
 virtual void Update()=0;
+virtual void attach()=0;
+virtual void dettach()=0;
+virtual ~Observer(){};
 };
 #endif //LISTA_OBSERVER_H

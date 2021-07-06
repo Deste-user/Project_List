@@ -61,25 +61,6 @@ bool Lista::search_into_list(Product *prod) {
 }
 
 
-
-const string &Lista::getNameOfList() const {
-    return name_of_list;
-}
-
-void Lista::setNameOfList(const string &nameOfList) {
-    name_of_list = nameOfList;
-}
-
-int Lista::getNumOfElements() const {
-    return num_of_elements;
-}
-
-void Lista::setNumOfElements(int numOfElements) {
-    num_of_elements = numOfElements;
-}
-
-
-
 void Lista::print_list()
 {
     std::cout<<"Lista:"<<std::endl;
@@ -92,20 +73,40 @@ void Lista::print_list()
     }
 }
 
-void Lista::attach(Observer *A) {
+
+void Lista::subscribe(Observer *A) {
 observers.push_back(A);
 }
 
-void Lista::dettach(Observer *B) {
+
+void Lista::unsubscribe(Observer *B)  {
 observers.remove(B);
 }
 
+
+
 void Lista::notify(){
-for (auto i: observers)
-{
+for (auto i: observers){
     i->Update();
+}}
+
+
+
+Lista::~Lista(){
+    {
+        for(auto & i : lst){
+            delete i;
+        }
+        for(auto &j : observers){
+            j->dettach();
+        }
+    }
 }
-}
+
+
+//getter and setter
+
+
 
 const list<Product *> &Lista::getLst() const {
     return lst;
@@ -121,6 +122,22 @@ const list<Observer *> &Lista::getObservers() const {
 
 void Lista::setObservers(const list<Observer *> &observers) {
     Lista::observers = observers;
+}
+
+const string &Lista::getNameOfList() const {
+    return name_of_list;
+}
+
+void Lista::setNameOfList(const string &nameOfList) {
+    name_of_list = nameOfList;
+}
+
+int Lista::getNumOfElements() const {
+    return num_of_elements;
+}
+
+void Lista::setNumOfElements(int numOfElements) {
+    num_of_elements = numOfElements;
 }
 
 
