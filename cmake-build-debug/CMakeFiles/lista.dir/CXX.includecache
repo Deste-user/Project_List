@@ -10,10 +10,6 @@
 string
 -
 
-/Users/marcodestefano/Documents/Clion_Projects/lista/Lista.cpp
-Lista.h
-/Users/marcodestefano/Documents/Clion_Projects/lista/Lista.h
-
 /Users/marcodestefano/Documents/Clion_Projects/lista/Lista.h
 string
 -
@@ -29,8 +25,6 @@ Observer.h
 /Users/marcodestefano/Documents/Clion_Projects/lista/Observer.h
 
 /Users/marcodestefano/Documents/Clion_Projects/lista/Observer.h
-Subject.h
-/Users/marcodestefano/Documents/Clion_Projects/lista/Subject.h
 
 /Users/marcodestefano/Documents/Clion_Projects/lista/Product.h
 string
@@ -41,10 +35,6 @@ CategoryProduct.h
 /Users/marcodestefano/Documents/Clion_Projects/lista/Subject.h
 Observer.h
 /Users/marcodestefano/Documents/Clion_Projects/lista/Observer.h
-
-/Users/marcodestefano/Documents/Clion_Projects/lista/Utente.cpp
-Utente.h
-/Users/marcodestefano/Documents/Clion_Projects/lista/Utente.h
 
 /Users/marcodestefano/Documents/Clion_Projects/lista/Utente.h
 string

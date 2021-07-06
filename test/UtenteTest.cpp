@@ -7,6 +7,9 @@
 TEST(Utente,DefaultCostructor){
     Utente utente("Paolo");
     EXPECT_EQ(utente.getNameOfUtente(),"Paolo");
-
+    EXPECT_EQ(utente.getNumListe(),0);
+    EXPECT_EQ(utente.getSubject(),nullptr);
+    EXPECT_EQ(utente.getElencoListe().begin(),nullptr);
 }
+
 

@@ -121,17 +121,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -142,6 +131,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -176,6 +176,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named LISTA
+
+# Build rule for target.
+LISTA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LISTA
+.PHONY : LISTA
+
+# fast build rule for target.
+LISTA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LISTA.dir/build.make CMakeFiles/LISTA.dir/build
+.PHONY : LISTA/fast
+
+#=============================================================================
 # Target rules for targets named core
 
 # Build rule for target.
@@ -187,19 +200,6 @@ core: cmake_check_build_system
 core/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/build
 .PHONY : core/fast
-
-#=============================================================================
-# Target rules for targets named Lista
-
-# Build rule for target.
-Lista: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lista
-.PHONY : Lista
-
-# fast build rule for target.
-Lista/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/build
-.PHONY : Lista/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -260,7 +260,6 @@ Lista.o: Lista.cpp.o
 # target to build an object file
 Lista.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Lista.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Lista.cpp.o
 .PHONY : Lista.cpp.o
 
 Lista.i: Lista.cpp.i
@@ -270,7 +269,6 @@ Lista.i: Lista.cpp.i
 # target to preprocess a source file
 Lista.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Lista.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Lista.cpp.i
 .PHONY : Lista.cpp.i
 
 Lista.s: Lista.cpp.s
@@ -280,7 +278,6 @@ Lista.s: Lista.cpp.s
 # target to generate assembly for a file
 Lista.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Lista.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Lista.cpp.s
 .PHONY : Lista.cpp.s
 
 Product.o: Product.cpp.o
@@ -290,7 +287,6 @@ Product.o: Product.cpp.o
 # target to build an object file
 Product.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Product.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Product.cpp.o
 .PHONY : Product.cpp.o
 
 Product.i: Product.cpp.i
@@ -300,7 +296,6 @@ Product.i: Product.cpp.i
 # target to preprocess a source file
 Product.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Product.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Product.cpp.i
 .PHONY : Product.cpp.i
 
 Product.s: Product.cpp.s
@@ -310,7 +305,6 @@ Product.s: Product.cpp.s
 # target to generate assembly for a file
 Product.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Product.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Product.cpp.s
 .PHONY : Product.cpp.s
 
 Utente.o: Utente.cpp.o
@@ -320,7 +314,6 @@ Utente.o: Utente.cpp.o
 # target to build an object file
 Utente.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Utente.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Utente.cpp.o
 .PHONY : Utente.cpp.o
 
 Utente.i: Utente.cpp.i
@@ -330,7 +323,6 @@ Utente.i: Utente.cpp.i
 # target to preprocess a source file
 Utente.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Utente.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Utente.cpp.i
 .PHONY : Utente.cpp.i
 
 Utente.s: Utente.cpp.s
@@ -340,7 +332,6 @@ Utente.s: Utente.cpp.s
 # target to generate assembly for a file
 Utente.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Utente.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/Utente.cpp.s
 .PHONY : Utente.cpp.s
 
 main.o: main.cpp.o
@@ -349,7 +340,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LISTA.dir/build.make CMakeFiles/LISTA.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -358,7 +349,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LISTA.dir/build.make CMakeFiles/LISTA.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -367,7 +358,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lista.dir/build.make CMakeFiles/Lista.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LISTA.dir/build.make CMakeFiles/LISTA.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -382,7 +373,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Lista"
+	@echo "... LISTA"
 	@echo "... core"
 	@echo "... gmock"
 	@echo "... gmock_main"

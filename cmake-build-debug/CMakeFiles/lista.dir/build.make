@@ -68,96 +68,51 @@ CMAKE_SOURCE_DIR = /Users/marcodestefano/Documents/Clion_Projects/lista
 CMAKE_BINARY_DIR = /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug
 
 # Include any dependencies generated for this target.
-include CMakeFiles/Lista.dir/depend.make
+include CMakeFiles/LISTA.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/Lista.dir/progress.make
+include CMakeFiles/LISTA.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/Lista.dir/flags.make
+include CMakeFiles/LISTA.dir/flags.make
 
-CMakeFiles/Lista.dir/main.cpp.o: CMakeFiles/Lista.dir/flags.make
-CMakeFiles/Lista.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lista.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lista.dir/main.cpp.o -c /Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp
+CMakeFiles/LISTA.dir/main.cpp.o: CMakeFiles/LISTA.dir/flags.make
+CMakeFiles/LISTA.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LISTA.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LISTA.dir/main.cpp.o -c /Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp
 
-CMakeFiles/Lista.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lista.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp > CMakeFiles/Lista.dir/main.cpp.i
+CMakeFiles/LISTA.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LISTA.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp > CMakeFiles/LISTA.dir/main.cpp.i
 
-CMakeFiles/Lista.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lista.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp -o CMakeFiles/Lista.dir/main.cpp.s
+CMakeFiles/LISTA.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LISTA.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp -o CMakeFiles/LISTA.dir/main.cpp.s
 
-CMakeFiles/Lista.dir/Lista.cpp.o: CMakeFiles/Lista.dir/flags.make
-CMakeFiles/Lista.dir/Lista.cpp.o: ../Lista.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lista.dir/Lista.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lista.dir/Lista.cpp.o -c /Users/marcodestefano/Documents/Clion_Projects/lista/Lista.cpp
+# Object files for target LISTA
+LISTA_OBJECTS = \
+"CMakeFiles/LISTA.dir/main.cpp.o"
 
-CMakeFiles/Lista.dir/Lista.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lista.dir/Lista.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcodestefano/Documents/Clion_Projects/lista/Lista.cpp > CMakeFiles/Lista.dir/Lista.cpp.i
+# External object files for target LISTA
+LISTA_EXTERNAL_OBJECTS =
 
-CMakeFiles/Lista.dir/Lista.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lista.dir/Lista.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcodestefano/Documents/Clion_Projects/lista/Lista.cpp -o CMakeFiles/Lista.dir/Lista.cpp.s
-
-CMakeFiles/Lista.dir/Utente.cpp.o: CMakeFiles/Lista.dir/flags.make
-CMakeFiles/Lista.dir/Utente.cpp.o: ../Utente.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Lista.dir/Utente.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lista.dir/Utente.cpp.o -c /Users/marcodestefano/Documents/Clion_Projects/lista/Utente.cpp
-
-CMakeFiles/Lista.dir/Utente.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lista.dir/Utente.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcodestefano/Documents/Clion_Projects/lista/Utente.cpp > CMakeFiles/Lista.dir/Utente.cpp.i
-
-CMakeFiles/Lista.dir/Utente.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lista.dir/Utente.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcodestefano/Documents/Clion_Projects/lista/Utente.cpp -o CMakeFiles/Lista.dir/Utente.cpp.s
-
-CMakeFiles/Lista.dir/Product.cpp.o: CMakeFiles/Lista.dir/flags.make
-CMakeFiles/Lista.dir/Product.cpp.o: ../Product.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Lista.dir/Product.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lista.dir/Product.cpp.o -c /Users/marcodestefano/Documents/Clion_Projects/lista/Product.cpp
-
-CMakeFiles/Lista.dir/Product.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lista.dir/Product.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcodestefano/Documents/Clion_Projects/lista/Product.cpp > CMakeFiles/Lista.dir/Product.cpp.i
-
-CMakeFiles/Lista.dir/Product.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lista.dir/Product.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcodestefano/Documents/Clion_Projects/lista/Product.cpp -o CMakeFiles/Lista.dir/Product.cpp.s
-
-# Object files for target Lista
-Lista_OBJECTS = \
-"CMakeFiles/Lista.dir/main.cpp.o" \
-"CMakeFiles/Lista.dir/Lista.cpp.o" \
-"CMakeFiles/Lista.dir/Utente.cpp.o" \
-"CMakeFiles/Lista.dir/Product.cpp.o"
-
-# External object files for target Lista
-Lista_EXTERNAL_OBJECTS =
-
-Lista: CMakeFiles/Lista.dir/main.cpp.o
-Lista: CMakeFiles/Lista.dir/Lista.cpp.o
-Lista: CMakeFiles/Lista.dir/Utente.cpp.o
-Lista: CMakeFiles/Lista.dir/Product.cpp.o
-Lista: CMakeFiles/Lista.dir/build.make
-Lista: libcore.a
-Lista: CMakeFiles/Lista.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Lista"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lista.dir/link.txt --verbose=$(VERBOSE)
+LISTA: CMakeFiles/LISTA.dir/main.cpp.o
+LISTA: CMakeFiles/LISTA.dir/build.make
+LISTA: libcore.a
+LISTA: CMakeFiles/LISTA.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable LISTA"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LISTA.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Lista.dir/build: Lista
+CMakeFiles/LISTA.dir/build: LISTA
 
-.PHONY : CMakeFiles/Lista.dir/build
+.PHONY : CMakeFiles/LISTA.dir/build
 
-CMakeFiles/Lista.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/Lista.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/Lista.dir/clean
+CMakeFiles/LISTA.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/LISTA.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/LISTA.dir/clean
 
-CMakeFiles/Lista.dir/depend:
-	cd /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/marcodestefano/Documents/Clion_Projects/lista /Users/marcodestefano/Documents/Clion_Projects/lista /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/Lista.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/Lista.dir/depend
+CMakeFiles/LISTA.dir/depend:
+	cd /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/marcodestefano/Documents/Clion_Projects/lista /Users/marcodestefano/Documents/Clion_Projects/lista /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/LISTA.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/LISTA.dir/depend
 

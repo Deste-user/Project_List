@@ -15,7 +15,9 @@ using namespace std;
 class  Utente: public Observer{
 public:
     explicit Utente(string nm):name_of_utente(nm){}
+
     void Create_list( string &name);
+    //void add_a_list(Lista* list);
     Lista* search_name_list(string &name);
     //void Delete_list(const string &name);
     //void Print_List();

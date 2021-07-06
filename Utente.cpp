@@ -12,6 +12,11 @@ void Utente::Create_list(string &name) {
     num_liste++;
 }
 
+/*void Utente::add_a_list(Lista *list){
+    list->subscribe(this);
+    Elenco_Liste.push_back(list);
+}*/
+
 
 
 Lista* Utente::search_name_list(std::string &name)
@@ -29,13 +34,14 @@ Lista* Utente::search_name_list(std::string &name)
 }
 
 
-/*
+
 //Stampa
-void Utente::Print_List()
+/*void Utente::Print_List()
 {
     for(auto i:Elenco_Liste)
     {
     std::cout<< i->getNameOfList() <<std::endl;
+
    }
 }
 
@@ -46,7 +52,7 @@ void Utente::Delete_list(const string &name) {
     for (auto iter=Elenco_Liste.begin();iter!= Elenco_Liste.end();iter++){
             if((*iter)->getNameOfList()==name)
             {
-                (*iter)->dettach(this);
+                (*iter)->unsubscribe(this);
                 Elenco_Liste.remove(*iter);
                 //Elenco_Liste.erase(iter)
                 //iter--;
@@ -77,10 +83,11 @@ void Utente::Update() {
 
 void Utente::remove_product_toList(Product *product, string namelist, int qty) {
     Lista* result= search_name_list(namelist);
-    if(result->getNameOfList()==namelist){
-        subject=result;
-        result->rem_to_list(product,qty);
 
+    if(result->getNameOfList()==namelist)
+    {
+        subject=result;
+        subject->rem_to_list(product,qty);
     }
     this->Update();
 
@@ -115,4 +122,6 @@ const string &Utente::getNameOfUtente() const {
 void Utente::setNameOfUtente(const string &nameOfUtente) {
     name_of_utente = nameOfUtente;
 }
+
+
 

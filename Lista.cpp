@@ -28,19 +28,21 @@ void Lista::add_to_list(Product *prod,int qty) {
 
 
 
-void Lista::rem_to_list(Product *prod, int qty_to_remove){
+void Lista::rem_to_list(Product *prod, int qty_to_remove)
+{
     if(qty_to_remove>0){
     if(search_into_list(prod)) //controllo per vedere se c'è nella lista
     {
         for(auto i=lst.begin();i!=lst.end(); i++){
-            if((*i)->getQuantity()<=qty_to_remove)
+            if ((*i)->getName() == prod->getName())
             {
-                i++;
+              if((*i)->getQuantity()<=qty_to_remove)
+              {
                 lst.erase(i);
-
-            }else{
+              }else{
                 (*i)->setQuantity((*i)->getQuantity()-qty_to_remove);
-            }
+              }
+           }
         }
     }
 }else if(qty_to_remove==0){
@@ -61,68 +63,6 @@ bool Lista::search_into_list(Product *prod) {
 }
 
 
-void Lista::print_list()
-{
-    std::cout<<"Lista:"<<std::endl;
-
-
-    for (auto i:lst)
-    {
-
-        std::cout<<i->getName()<<"->"<< i->getQuantity()<<std::endl;
-    }
-}
-
-
-void Lista::subscribe(Observer *A) {
-observers.push_back(A);
-}
-
-
-void Lista::unsubscribe(Observer *B)  {
-observers.remove(B);
-}
-
-
-
-void Lista::notify(){
-for (auto i: observers){
-    i->Update();
-}}
-
-
-
-Lista::~Lista(){
-    {
-        for(auto & i : lst){
-            delete i;
-        }
-        for(auto &j : observers){
-            j->dettach();
-        }
-    }
-}
-
-
-//getter and setter
-
-
-
-const list<Product *> &Lista::getLst() const {
-    return lst;
-}
-
-void Lista::setLst(const list<Product *> &lst) {
-    Lista::lst = lst;
-}
-
-const list<Observer *> &Lista::getObservers() const {
-    return observers;
-}
-
-void Lista::setObservers(const list<Observer *> &observers) {
-    Lista::observers = observers;
-}
 
 const string &Lista::getNameOfList() const {
     return name_of_list;
@@ -138,6 +78,51 @@ int Lista::getNumOfElements() const {
 
 void Lista::setNumOfElements(int numOfElements) {
     num_of_elements = numOfElements;
+}
+
+
+
+void Lista::print_list()
+{
+    std::cout<<"Lista:"<<std::endl;
+
+
+    for (auto i:lst)
+    {
+
+        std::cout<<i->getName()<<"->"<< i->getQuantity()<<std::endl;
+    }
+}
+
+void Lista::subscribe(Observer *A) {
+observers.push_back(A);
+}
+
+void Lista::unsubscribe(Observer *B)  {
+observers.remove(B);
+}
+
+void Lista::notify(){
+for (auto i: observers)
+{
+    i->Update();
+}
+}
+
+const list<Product *> &Lista::getLst() const {
+    return lst;
+}
+
+void Lista::setLst(const list<Product *> &lst) {
+    Lista::lst = lst;
+}
+
+const list<Observer *> &Lista::getObservers() const {
+    return observers;
+}
+
+void Lista::setObservers(const list<Observer *> &observers) {
+    Lista::observers = observers;
 }
 
 

@@ -26,7 +26,15 @@ public:
     void rem_to_list(Product *prod, int qty_to_remove);
     bool search_into_list(Product *prod);
     void print_list();
-    virtual ~Lista();
+    virtual ~Lista(){
+        for(auto i:lst){
+            delete i;
+        }
+        for(auto j:observers){
+            j->dettach();
+        }
+
+    }
 
 
 
