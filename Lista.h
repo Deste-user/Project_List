@@ -18,23 +18,15 @@
 class Lista: public Subject {
 public:
     explicit Lista(std::string nm):name_of_list(nm)  {}
-    void subscribe(Observer *A) override;
-    void unsubscribe(Observer *B) override;
+    void subscribe(std::shared_ptr<Observer>& A) override;
+    void unsubscribe(std::shared_ptr<Observer>& B) override;
     void notify() override;
 
-    void add_to_list(Product *prod,int qty);
-    void rem_to_list(Product *prod, int qty_to_remove);
-    bool search_into_list(Product *prod);
+    void add_to_list(std::shared_ptr<Product>& prod,int qty);
+    void rem_to_list(std::shared_ptr<Product>& prod, int qty_to_remove);
+    bool search_into_list(const std::shared_ptr<Product>& prod);
     void print_list();
-    virtual ~Lista(){
-        for(auto i:lst){
-            delete i;
-        }
-        for(auto j:observers){
-            j->dettach();
-        }
-
-    }
+    virtual ~Lista(){}
 
 
 
@@ -44,23 +36,18 @@ public:
 
     void setNameOfList(const string &nameOfList);
 
-    int getNumOfElements() const;
+    const list<std::shared_ptr<Product>> &getLst() const;
 
-    void setNumOfElements(int numOfElements);
+    void setLst(const list<std::shared_ptr<Product>> &lst);
 
-    const list<Product *> &getLst() const;
+    const list<std::shared_ptr<Observer>> &getObservers() const;
 
-    void setLst(const list<Product *> &lst);
-
-    const list<Observer *> &getObservers() const;
-
-    void setObservers(const list<Observer *> &observers);
+    void setObservers(const list<std::shared_ptr<Observer>> &observers);
 
 private:
     std::string name_of_list;
-    int num_of_elements=0;
-    std::list<Product*> lst;
-   std::list<Observer*> observers;
+    std::list<std::shared_ptr<Product>> lst;
+    std::list<std::shared_ptr<Observer>> observers;
 };
 
 

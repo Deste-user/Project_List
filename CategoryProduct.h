@@ -8,23 +8,14 @@
 //Lazy Class or Data Class
 class CategoryProduct {
 public:
-    explicit CategoryProduct(std::string nmCat):name(nmCat){}
-
-    CategoryProduct(CategoryProduct& that):name(that.name){}
-
-    CategoryProduct& operator=(CategoryProduct &that)
-            {
-        name=that.name;
-        return *this;
-    };
-
+    explicit CategoryProduct(const std::string nmCat):name(nmCat){}
     const std::string &getName() const {
         return name;
     }
 
 
 private:
-     std::string name;
+     const std::string name;
 };
 
 

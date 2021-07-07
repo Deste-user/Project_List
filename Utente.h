@@ -17,10 +17,10 @@ public:
     explicit Utente(string nm):name_of_utente(nm){}
 
     void Create_list( string &name);
-    //void add_a_list(Lista* list);
+    void add_a_list(Lista& list);
     Lista* search_name_list(string &name);
-    //void Delete_list(const string &name);
-    //void Print_List();
+    void Delete_list(const string &name);
+    void Print_List();
     void attach() override;
     void dettach() override;
     void Update() override;
@@ -30,13 +30,14 @@ public:
     const string &getNameOfUtente() const;
     void setNameOfUtente(const string &nameOfUtente);
 
-    virtual ~Utente();
+
+    virtual ~Utente(){}
 
 private:
     string name_of_utente;
-    list<Lista*> Elenco_Liste;
-    int num_liste=0;
-    Lista *subject;
+    list<shared_ptr<Lista>> Elenco_Liste;
+
+    //lista di observer
 };
 
 

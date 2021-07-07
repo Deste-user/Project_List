@@ -12,10 +12,11 @@ void Utente::Create_list(string &name) {
     num_liste++;
 }
 
-/*void Utente::add_a_list(Lista *list){
-    list->subscribe(this);
-    Elenco_Liste.push_back(list);
-}*/
+void Utente::add_a_list(Lista &list){
+    subject=&list;
+    attach();
+    Elenco_Liste.push_back(&list);
+}
 
 
 
@@ -36,13 +37,16 @@ Lista* Utente::search_name_list(std::string &name)
 
 
 //Stampa
-/*void Utente::Print_List()
+void Utente::Print_List()
 {
+
+    std::cout<<this->getNameOfUtente()<<"->" <<"Raccolta Liste:"<<std::endl;
     for(auto i:Elenco_Liste)
     {
     std::cout<< i->getNameOfList() <<std::endl;
 
    }
+    std::cout<<"---------------------------------"<<std::endl;
 }
 
 
@@ -60,7 +64,7 @@ void Utente::Delete_list(const string &name) {
     }
 
 
-}*/
+}
 
 void Utente::add_product_toList(Product *product ,string namelist,int qty) {
 
@@ -69,15 +73,15 @@ void Utente::add_product_toList(Product *product ,string namelist,int qty) {
 
     if(result->getNameOfList()==namelist)
     {
-
-        result->add_to_list(product , qty);
-        subject=result;
+        subject = result;
+        subject->add_to_list(product , qty);
     }
-    this->Update();
+
 
 }
 
-void Utente::Update() {
+void Utente::Update(){
+    std::cout<<this->getNameOfUtente()<<std::endl;
     subject->print_list();
 }
 
@@ -102,14 +106,7 @@ void Utente::dettach() {
 }
 
 
-Utente::~Utente() {
-    {
-        for(auto i=Elenco_Liste.begin();i!=Elenco_Liste.end();i++){
-            delete *i;
-        }
-        delete subject;
-    }
-}
+
 
 //Getter and Setter
 
@@ -122,6 +119,16 @@ const string &Utente::getNameOfUtente() const {
 void Utente::setNameOfUtente(const string &nameOfUtente) {
     name_of_utente = nameOfUtente;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

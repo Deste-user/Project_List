@@ -6,6 +6,13 @@
 /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/core.dir
 /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/install/local.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/install/strip.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/install.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/list_install_components.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/edit_cache.dir
+/Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/CMakeFiles/runalltest.dir
 /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/lib/googletest-master/CMakeFiles/install/local.dir
 /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/lib/googletest-master/CMakeFiles/install/strip.dir
 /Users/marcodestefano/Documents/Clion_Projects/lista/cmake-build-debug/test/lib/googletest-master/CMakeFiles/install.dir

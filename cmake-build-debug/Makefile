@@ -202,6 +202,19 @@ core/fast:
 .PHONY : core/fast
 
 #=============================================================================
+# Target rules for targets named runalltest
+
+# Build rule for target.
+runalltest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runalltest
+.PHONY : runalltest
+
+# fast build rule for target.
+runalltest/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runalltest.dir/build.make test/CMakeFiles/runalltest.dir/build
+.PHONY : runalltest/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -379,6 +392,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... runalltest"
 	@echo "... Lista.o"
 	@echo "... Lista.i"
 	@echo "... Lista.s"
