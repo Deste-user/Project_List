@@ -12,32 +12,40 @@
 #include "Observer.h"
 using namespace std;
 
-class  Utente: public Observer{
+class  Utente: public Subject{
 public:
     explicit Utente(string nm):name_of_utente(nm){}
 
-    void Create_list( string &name);
-    void add_a_list(Lista& list);
-    Lista* search_name_list(string &name);
-    void Delete_list(const string &name);
-    void Print_List();
-    void attach() override;
-    void dettach() override;
-    void Update() override;
-    void add_product_toList(Product *product,string namelist,int qty);
-    void remove_product_toList(Product *product,string namelist,int qty);
+    void create_list( const string name);
+    void add_a_list(shared_ptr<Lista> list);
+    shared_ptr<Lista> search_name_list(string name);
+
+    void delete_list(const string &name);
+    void print_all_list();
+    void get_state() override;
+
+    void subscribe(shared_ptr<Observer> A) override;
+    void unsubscribe(shared_ptr<Observer> B) override;
+    void notify() override;
+
+    void add_product_to_list(std::shared_ptr<Product> product, string namelist,const int qty);
+    void remove_product_to_list(std::shared_ptr<Product> product,string namelist,const int qty);
 
     const string &getNameOfUtente() const;
     void setNameOfUtente(const string &nameOfUtente);
+    bool isUpdateAllList() const;
+    void setUpdateAllList(bool updateAllList);
 
 
     virtual ~Utente(){}
 
 private:
     string name_of_utente;
-    list<shared_ptr<Lista>> Elenco_Liste;
+    list<shared_ptr<Lista>> elenco_liste;
 
     //lista di observer
+    list<shared_ptr<Observer>> obs_utente;
+
 };
 
 

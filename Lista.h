@@ -18,14 +18,14 @@
 class Lista: public Subject {
 public:
     explicit Lista(std::string nm):name_of_list(nm)  {}
-    void subscribe(std::shared_ptr<Observer>& A) override;
-    void unsubscribe(std::shared_ptr<Observer>& B) override;
+    void subscribe(std::shared_ptr<Observer> A) override;
+    void unsubscribe(std::shared_ptr<Observer> B) override;
     void notify() override;
 
     void add_to_list(std::shared_ptr<Product>& prod,int qty);
     void rem_to_list(std::shared_ptr<Product>& prod, int qty_to_remove);
     bool search_into_list(const std::shared_ptr<Product>& prod);
-    void print_list();
+    void get_state() override;
     virtual ~Lista(){}
 
 

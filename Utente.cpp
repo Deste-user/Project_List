@@ -5,27 +5,29 @@
 #include "Utente.h"
 
 
-void Utente::Create_list(string &name) {
-    Lista* lst(new Lista(name));
-    lst->subscribe(this);
-    Elenco_Liste.push_back(lst);
-    num_liste++;
+void Utente::create_list(const string name) {
+
+    shared_ptr<Lista> lst(new Lista(name));
+    elenco_liste.push_back(lst);
+    this->notify();
+
 }
 
-void Utente::add_a_list(Lista &list){
-    subject=&list;
-    attach();
-    Elenco_Liste.push_back(&list);
-}
-
-
-
-Lista* Utente::search_name_list(std::string &name)
+void Utente::add_a_list(std::shared_ptr<Lista> list)
 {
-    int count=0;
-    for(auto i: Elenco_Liste)
+    if(list!=nullptr ){
+        elenco_liste.push_back(list);
+        this->notify();
+    }
+
+}
+
+
+
+std::shared_ptr<Lista> Utente::search_name_list(std::string name)
+{
+    for(auto i: elenco_liste)
     {
-        count++;
         if(i->getNameOfList()==name)
         {
             return i;
@@ -37,73 +39,64 @@ Lista* Utente::search_name_list(std::string &name)
 
 
 //Stampa
-void Utente::Print_List()
+void Utente::print_all_list()
 {
-
     std::cout<<this->getNameOfUtente()<<"->" <<"Raccolta Liste:"<<std::endl;
-    for(auto i:Elenco_Liste)
-    {
-    std::cout<< i->getNameOfList() <<std::endl;
 
-   }
-    std::cout<<"---------------------------------"<<std::endl;
+    if(*elenco_liste.begin()!= nullptr) {
+        for (auto i :elenco_liste) {
+
+           std::cout << i->getNameOfList() << std::endl;
+        }
+        std::cout << "---------------------------------" << std::endl;
+    }else throw std::invalid_argument("Smart_pointer point to nullptr");
+
 }
 
 
 
-void Utente::Delete_list(const string &name) {
+void Utente::delete_list(const string &name) {
 
-    for (auto iter=Elenco_Liste.begin();iter!= Elenco_Liste.end();iter++){
+    for (auto iter=elenco_liste.begin();iter!= elenco_liste.end();iter++){
             if((*iter)->getNameOfList()==name)
             {
-                (*iter)->unsubscribe(this);
-                Elenco_Liste.remove(*iter);
+                elenco_liste.remove(*iter);
                 //Elenco_Liste.erase(iter)
                 //iter--;
             }
     }
+    this->notify();
 
 
 }
 
-void Utente::add_product_toList(Product *product ,string namelist,int qty) {
 
 
-    Lista* result= search_name_list(namelist);
+void Utente::add_product_to_list(std::shared_ptr<Product > product , string namelist,const int qty) {
+    std::shared_ptr<Lista> result= search_name_list(namelist);
 
     if(result->getNameOfList()==namelist)
     {
-        subject = result;
-        subject->add_to_list(product , qty);
+        result->add_to_list(product,qty);
     }
 
-
 }
 
-void Utente::Update(){
-    std::cout<<this->getNameOfUtente()<<std::endl;
-    subject->print_list();
-}
 
-void Utente::remove_product_toList(Product *product, string namelist, int qty) {
-    Lista* result= search_name_list(namelist);
+
+void Utente::remove_product_to_list(std::shared_ptr<Product> product,  string namelist,const int qty) {
+    std::shared_ptr<Lista> result= search_name_list(namelist);
 
     if(result->getNameOfList()==namelist)
     {
-        subject=result;
-        subject->rem_to_list(product,qty);
+       result->rem_to_list(product,qty);
     }
-    this->Update();
 
 }
 
 
-void Utente::attach(){
-    subject->subscribe(this);
-}
-void Utente::dettach() {
-    subject->unsubscribe(this);
-}
+
+
 
 
 
@@ -119,6 +112,46 @@ const string &Utente::getNameOfUtente() const {
 void Utente::setNameOfUtente(const string &nameOfUtente) {
     name_of_utente = nameOfUtente;
 }
+
+//interfaccia Subject
+
+void Utente::unsubscribe(shared_ptr<Observer> B) {
+obs_utente.remove(B);
+for (auto& i:elenco_liste)
+    {
+        i->unsubscribe(B);
+    }
+}
+
+
+void Utente::subscribe(shared_ptr<Observer> A) {
+obs_utente.push_back(A);
+for (auto& i:elenco_liste)
+   {
+      i->subscribe(A);
+   }
+}
+
+void Utente::notify() {
+
+for (auto& i:obs_utente )
+{
+    if(i != nullptr)
+    {
+        i->update(shared_ptr<Utente>(this));
+    }
+}
+
+}
+
+void Utente::get_state() {
+cout<<"Utente:"<<this->getNameOfUtente()<<endl;
+cout<<"Liste Aggiornate"<<endl;
+this->print_all_list();
+    cout<<"eueuue"<<endl;
+}
+
+
 
 
 

@@ -347,6 +347,33 @@ Utente.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Utente.cpp.s
 .PHONY : Utente.cpp.s
 
+ViewUtente.o: ViewUtente.cpp.o
+
+.PHONY : ViewUtente.o
+
+# target to build an object file
+ViewUtente.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/ViewUtente.cpp.o
+.PHONY : ViewUtente.cpp.o
+
+ViewUtente.i: ViewUtente.cpp.i
+
+.PHONY : ViewUtente.i
+
+# target to preprocess a source file
+ViewUtente.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/ViewUtente.cpp.i
+.PHONY : ViewUtente.cpp.i
+
+ViewUtente.s: ViewUtente.cpp.s
+
+.PHONY : ViewUtente.s
+
+# target to generate assembly for a file
+ViewUtente.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/ViewUtente.cpp.s
+.PHONY : ViewUtente.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -402,6 +429,9 @@ help:
 	@echo "... Utente.o"
 	@echo "... Utente.i"
 	@echo "... Utente.s"
+	@echo "... ViewUtente.o"
+	@echo "... ViewUtente.i"
+	@echo "... ViewUtente.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

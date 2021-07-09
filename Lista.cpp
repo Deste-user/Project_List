@@ -5,25 +5,22 @@
 #include "Lista.h"
 #include <memory>
 
-void Lista::add_to_list(std::shared_ptr<Product>& prod,int qty) {
+void Lista::add_to_list(std::shared_ptr<Product>& prod,int qty)
+{
     if(qty>0){
-    if (search_into_list(prod))
-    {
+      if (search_into_list(prod))
+      {
         for (auto i = lst.begin(); i != lst.end(); i++){
             if ((*i)->getName() == prod->getName())
             {
-
                 (*i)->setQuantity(qty + (*i)->getQuantity());
-                this->notify();
             }
         }
-    }
-    else {
+      }else {
         prod->setQuantity(qty);
         lst.push_back(prod);
-        this->notify();
-    }
-
+      }
+      this->notify();
     }else if (qty==0)
         throw std::invalid_argument("Not enough quantity of Products ");
     else
@@ -49,11 +46,14 @@ void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
               }
            }
         }
+        this->notify();
     }
 }else if(qty_to_remove==0){
         throw std::invalid_argument("Can't remove zero product");
     }else throw std::invalid_argument("Can't add product");
 }
+
+
 
 
 bool Lista::search_into_list(const std::shared_ptr<Product>& prod) {
@@ -82,37 +82,33 @@ void Lista::setNameOfList(const string &nameOfList) {
 
 
 
-void Lista::print_list()
+void Lista::get_state()
 {
-
     std::cout<<this->getNameOfList()<<":"<<std::endl;
 
-
-    for (auto i:lst)
+    for (auto i=lst.begin();i!=lst.end();i++)
     {
-
-        std::cout<<i->getName()<<"->"<< i->getQuantity()<<std::endl;
+        std::cout<<(*i)->getName()<<"->"<< (*i)->getQuantity()<<std::endl;
     }
     std::cout<<"-----------------------------------"<<std::endl;
 }
 
-void Lista::subscribe( std::shared_ptr<Observer>& A) {
+void Lista::subscribe( std::shared_ptr<Observer> A) {
 observers.push_back(A);
 }
 
-void Lista::unsubscribe(std::shared_ptr<Observer>& B)  {
+void Lista::unsubscribe(std::shared_ptr<Observer> B)  {
 observers.remove(B);
 }
 
 void Lista::notify(){
-for (const auto& i: observers)
-{
-    i->Update();
+    for (const auto &i: observers) {
+        i->update(shared_ptr<Lista> (this));
+    }
 }
-}
 
 
-
+//Getter and Setter
 
 
 

@@ -4,12 +4,14 @@
 
 #ifndef LISTA_OBSERVER_H
 #define LISTA_OBSERVER_H
+#include <memory>
+class Subject;
 
 class Observer{
 public:
-virtual void Update()=0;
+virtual void update(std::shared_ptr<Subject> sub)=0;
 virtual void attach()=0;
-virtual void dettach()=0;
+virtual void detach()=0;
 virtual ~Observer(){};
 };
 #endif //LISTA_OBSERVER_H

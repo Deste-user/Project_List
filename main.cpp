@@ -1,42 +1,21 @@
 #include <iostream>
 #include "Lista.h"
 #include "Utente.h"
+#include "ViewUtente.h"
+
 #include "CategoryProduct.h"
 int main() {
+    std::shared_ptr<Utente> utente1(new Utente("Mario"));
+    std::shared_ptr<Utente> utente2(new Utente("Giorgio"));
 
-    Utente* user(new Utente("Mario"));
-    Utente* user3(new Utente("Lorenzo"));
-    string nm="Per Nonna";
-    user->Create_list(nm);
-    Lista* list1(new Lista(nm));
-    Lista* list(new Lista("Spesa"));
-    user3->add_a_list(*list);
-    user3->add_a_list(*list1);
+    ViewUtente GUI(utente1);
+    ViewUtente GUI1(utente2);
 
-    user3->Print_List();
-    user->add_a_list(*list);
-    user->Print_List();
+    std::shared_ptr<Lista> lista(new Lista("spesa"));
+    utente1->add_a_list(lista);
 
-    CategoryProduct Frutta("Frutta");
-
-    Product* mela(new Product("Mela",Frutta));
-
-    user3->add_product_toList(mela,list->getNameOfList(),4);
-    user->add_product_toList(mela,list->getNameOfList(),4);
-
-    Product* pera(new Product("Pera",Frutta));
-
-    user->add_product_toList(pera,nm,2);
-    user->remove_product_toList(pera,nm,1);
-    user->remove_product_toList(pera,nm,7);
-
-    Product* banana(new Product("Banana",Frutta));
-
-    user->add_product_toList(banana,nm,1);
-    user->remove_product_toList(mela,nm,9);
-
-
-
+    std::cout<<"ncòn"<<std::endl;
+    //utente2->add_a_list((std::shared_ptr<Lista>(utente1->search_name_list("Spesa"))));
 
 
     return 0;

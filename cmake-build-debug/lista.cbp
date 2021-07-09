@@ -415,6 +415,12 @@
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/Utente.h">
 			<Option target="core"/>
 		</Unit>
+		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/ViewUtente.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/ViewUtente.h">
+			<Option target="core"/>
+		</Unit>
 		<Unit filename="/Users/marcodestefano/Documents/Clion_Projects/lista/main.cpp">
 			<Option target="LISTA"/>
 		</Unit>
