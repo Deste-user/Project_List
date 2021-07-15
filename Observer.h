@@ -9,7 +9,7 @@ class Subject;
 
 class Observer{
 public:
-virtual void update(std::shared_ptr<Subject> sub)=0;
+virtual void update(Subject* sub)=0;
 virtual void attach()=0;
 virtual void detach()=0;
 virtual ~Observer(){};

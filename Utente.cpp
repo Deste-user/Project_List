@@ -41,8 +41,6 @@ std::shared_ptr<Lista> Utente::search_name_list(std::string name)
 //Stampa
 void Utente::print_all_list()
 {
-    std::cout<<this->getNameOfUtente()<<"->" <<"Raccolta Liste:"<<std::endl;
-
     if(*elenco_liste.begin()!= nullptr) {
         for (auto i :elenco_liste) {
 
@@ -60,25 +58,21 @@ void Utente::delete_list(const string &name) {
     for (auto iter=elenco_liste.begin();iter!= elenco_liste.end();iter++){
             if((*iter)->getNameOfList()==name)
             {
-                elenco_liste.remove(*iter);
-                //Elenco_Liste.erase(iter)
-                //iter--;
+                elenco_liste.erase(iter);
             }
     }
     this->notify();
-
-
 }
 
 
 
-void Utente::add_product_to_list(std::shared_ptr<Product > product , string namelist,const int qty) {
-    std::shared_ptr<Lista> result= search_name_list(namelist);
+void Utente::add_product_to_list(std::shared_ptr<Product > product , const string& namelist ,const int qty) {
 
-    if(result->getNameOfList()==namelist)
-    {
-        result->add_to_list(product,qty);
-    }
+        for(auto& i:elenco_liste)
+        if (i->getNameOfList() == namelist)
+        {
+            i->add_to_list(product, qty);
+        }
 
 }
 
@@ -94,6 +88,18 @@ void Utente::remove_product_to_list(std::shared_ptr<Product> product,  string na
 
 }
 
+
+
+void Utente::buy_a_product(std::shared_ptr<Product> product, string namelist)
+{
+    auto result= search_name_list(namelist);
+    for(auto& i : result->getLst()) {
+        if(i->getName()==product->getName()) {
+            i->setBought(true);
+            result->get_state();
+        }
+    }
+}
 
 
 
@@ -115,40 +121,30 @@ void Utente::setNameOfUtente(const string &nameOfUtente) {
 
 //interfaccia Subject
 
-void Utente::unsubscribe(shared_ptr<Observer> B) {
-obs_utente.remove(B);
-for (auto& i:elenco_liste)
-    {
-        i->unsubscribe(B);
-    }
-}
-
-
-void Utente::subscribe(shared_ptr<Observer> A) {
-obs_utente.push_back(A);
-for (auto& i:elenco_liste)
-   {
-      i->subscribe(A);
-   }
-}
-
-void Utente::notify() {
-
-for (auto& i:obs_utente )
+void Utente::unsubscribe(shared_ptr<Observer> B)
 {
-    if(i != nullptr)
-    {
-        i->update(shared_ptr<Utente>(this));
-    }
+obs_utente.remove(B);
 }
 
+
+void Utente::subscribe(shared_ptr<Observer> A)
+{
+obs_utente.push_back(A);
+}
+
+void Utente::notify()
+{
+    for (auto& i:obs_utente)
+    {
+        i->update(this);
+    }
 }
 
 void Utente::get_state() {
 cout<<"Utente:"<<this->getNameOfUtente()<<endl;
-cout<<"Liste Aggiornate"<<endl;
+cout<<"Liste Aggiornate:"<<endl;
 this->print_all_list();
-    cout<<"eueuue"<<endl;
+
 }
 
 

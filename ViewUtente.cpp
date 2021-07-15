@@ -5,17 +5,17 @@
 #include "ViewUtente.h"
 
 void ViewUtente::attach() {
-subject->subscribe(std::shared_ptr<ViewUtente>(this));
+subject->subscribe(shared_ptr<ViewUtente>(this));
 }
 
 void ViewUtente::detach() {
 
-  subject->unsubscribe(std::shared_ptr<ViewUtente>(this));
+  subject->unsubscribe(shared_ptr<ViewUtente>(this));
 }
 
-void ViewUtente::update(shared_ptr<Subject> sub){
+void ViewUtente::update(Subject* sub)
+{
     sub->get_state();
-    cout<<"eueuue"<<endl;
 }
 
 

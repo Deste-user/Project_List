@@ -28,13 +28,13 @@ public:
     void unsubscribe(shared_ptr<Observer> B) override;
     void notify() override;
 
-    void add_product_to_list(std::shared_ptr<Product> product, string namelist,const int qty);
-    void remove_product_to_list(std::shared_ptr<Product> product,string namelist,const int qty);
+    void add_product_to_list(shared_ptr<Product> product, const string& namelist,int qty);
+    void remove_product_to_list(shared_ptr<Product> product,string namelist,int qty);
+    void buy_a_product(shared_ptr<Product> product,string namelist);
+
 
     const string &getNameOfUtente() const;
     void setNameOfUtente(const string &nameOfUtente);
-    bool isUpdateAllList() const;
-    void setUpdateAllList(bool updateAllList);
 
 
     virtual ~Utente(){}
@@ -42,10 +42,8 @@ public:
 private:
     string name_of_utente;
     list<shared_ptr<Lista>> elenco_liste;
-
     //lista di observer
     list<shared_ptr<Observer>> obs_utente;
-
 };
 
 

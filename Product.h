@@ -10,7 +10,7 @@
 using namespace std;
 class Product{
 public:
-    Product(const string nm,const CategoryProduct catg):name(nm),category(catg){}
+    Product(const string nm,const CategoryProduct catg):name(nm),category(catg) {}
 
 
 
@@ -24,6 +24,9 @@ public:
 
     void setQuantity(int quantity);
 
+    bool isBought() const;
+
+    void setBought(bool bought);
 
 private:
     const string name;

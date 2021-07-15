@@ -8,19 +8,21 @@
 void Lista::add_to_list(std::shared_ptr<Product>& prod,int qty)
 {
     if(qty>0){
-      if (search_into_list(prod))
+
+        if (search_into_list(prod))
       {
-        for (auto i = lst.begin(); i != lst.end(); i++){
-            if ((*i)->getName() == prod->getName())
-            {
-                (*i)->setQuantity(qty + (*i)->getQuantity());
+            for (auto i :lst ){
+              if (i->getName() == prod->getName())
+              {
+                i->setQuantity(qty + i->getQuantity());
+              }
             }
-        }
       }else {
-        prod->setQuantity(qty);
-        lst.push_back(prod);
-      }
-      this->notify();
+            prod->setQuantity(qty);
+            lst.push_back(prod);
+        }
+        this->get_state();
+
     }else if (qty==0)
         throw std::invalid_argument("Not enough quantity of Products ");
     else
@@ -33,8 +35,10 @@ void Lista::add_to_list(std::shared_ptr<Product>& prod,int qty)
 void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
 {
     if(qty_to_remove>0){
+
     if(search_into_list(prod))
     {
+
         for(auto i=lst.begin();i!=lst.end(); i++){
             if ((*i)->getName() == prod->getName())
             {
@@ -46,7 +50,7 @@ void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
               }
            }
         }
-        this->notify();
+        this->get_state();
     }
 }else if(qty_to_remove==0){
         throw std::invalid_argument("Can't remove zero product");
@@ -56,15 +60,15 @@ void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
 
 
 
-bool Lista::search_into_list(const std::shared_ptr<Product>& prod) {
-    if(prod!=nullptr) {
-        for (auto i = lst.begin(); i != lst.end(); i++) {
-            if ((*i)->getName() == prod->getName()) {
+bool Lista::search_into_list(const std::shared_ptr<Product>& prod) {;
+        for( auto i:lst)
+        {
+            if (i->getName() == prod->getName())
+            {
                 return true;
             }
         }
-       return false;
-    } throw std::invalid_argument("Illegal address");
+        return false;
 }
 
 
@@ -82,30 +86,19 @@ void Lista::setNameOfList(const string &nameOfList) {
 
 
 
-void Lista::get_state()
-{
-    std::cout<<this->getNameOfList()<<":"<<std::endl;
+void Lista::get_state() {
 
-    for (auto i=lst.begin();i!=lst.end();i++)
-    {
-        std::cout<<(*i)->getName()<<"->"<< (*i)->getQuantity()<<std::endl;
+    std::cout<<"Lista:  " << this->getNameOfList() << std::endl;
+
+    for (auto &i:lst) {
+        if (!(i->isBought())) {
+            std::cout << i->getName() << "->" << i->getQuantity() << "--->" << "Not Bought" << std::endl;
+        } else
+            std::cout << i->getName() << "->" << i->getQuantity() << "--->" << "Bought" << std::endl;
     }
-    std::cout<<"-----------------------------------"<<std::endl;
+    std::cout << "-----------------------------------" << std::endl;
 }
 
-void Lista::subscribe( std::shared_ptr<Observer> A) {
-observers.push_back(A);
-}
-
-void Lista::unsubscribe(std::shared_ptr<Observer> B)  {
-observers.remove(B);
-}
-
-void Lista::notify(){
-    for (const auto &i: observers) {
-        i->update(shared_ptr<Lista> (this));
-    }
-}
 
 
 //Getter and Setter
@@ -120,13 +113,6 @@ void Lista::setLst(const list<std::shared_ptr<Product>> &lst) {
     Lista::lst = lst;
 }
 
-const list<std::shared_ptr<Observer>> &Lista::getObservers() const {
-    return observers;
-}
-
-void Lista::setObservers(const list<std::shared_ptr<Observer>> &observers) {
-    Lista::observers = observers;
-}
 
 
 

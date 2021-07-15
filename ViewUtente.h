@@ -18,7 +18,7 @@ public:
 
     void attach() override;
     void detach() override;
-    void update(shared_ptr<Subject> sub) override;
+    void update(Subject* sub) override;
 
     ~ViewUtente() override
     {

@@ -23,6 +23,14 @@ void Product::setQuantity(int quantity) {
     Product::quantity = quantity;
 }
 
+bool Product::isBought() const {
+    return bought;
+}
+
+void Product::setBought(bool bought) {
+    Product::bought = bought;
+}
+
 
 
 
