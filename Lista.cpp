@@ -34,10 +34,10 @@ void Lista::add_to_list(std::shared_ptr<Product>& prod,int qty)
 
 void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
 {
-    if(qty_to_remove>0){
-
-    if(search_into_list(prod))
+    if(qty_to_remove>0)
     {
+
+     if(search_into_list(prod)){
 
         for(auto i=lst.begin();i!=lst.end(); i++){
             if ((*i)->getName() == prod->getName())
@@ -51,10 +51,10 @@ void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
            }
         }
         this->get_state();
-    }
+    }else throw invalid_argument("Product not avable");
 }else if(qty_to_remove==0){
-        throw std::invalid_argument("Can't remove zero product");
-    }else throw std::invalid_argument("Can't add product");
+        throw invalid_argument("Can't remove zero product");
+    }else throw invalid_argument("Can't add product");
 }
 
 

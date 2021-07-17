@@ -93,12 +93,22 @@ void Utente::remove_product_to_list(std::shared_ptr<Product> product,  string na
 void Utente::buy_a_product(std::shared_ptr<Product> product, string namelist)
 {
     auto result= search_name_list(namelist);
-    for(auto& i : result->getLst()) {
+    bool esito=false;
+    if(result!= nullptr)
+    {
+      for(auto& i : result->getLst())
+      {
         if(i->getName()==product->getName()) {
             i->setBought(true);
             result->get_state();
+            esito=true;
         }
-    }
+      }
+     if(!esito)
+     {
+        throw std::invalid_argument("Product absent");
+     }
+    }else throw std::invalid_argument("List absent");
 }
 
 
@@ -142,7 +152,7 @@ void Utente::notify()
 
 void Utente::get_state() {
 cout<<"Utente:"<<this->getNameOfUtente()<<endl;
-cout<<"Liste Aggiornate:"<<endl;
+cout<<"Liste Aggiornate"<<endl;
 this->print_all_list();
 
 }
