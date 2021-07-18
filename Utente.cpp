@@ -54,24 +54,34 @@ void Utente::print_all_list()
 
 
 void Utente::delete_list(const string &name) {
+    bool esito=false;
 
     for (auto iter=elenco_liste.begin();iter!= elenco_liste.end();iter++){
             if((*iter)->getNameOfList()==name)
             {
                 elenco_liste.erase(iter);
+                esito=true;
             }
     }
-    this->notify();
+   if(esito){
+       this->notify();
+   }else throw std::invalid_argument("There is no list with this name");
+
 }
 
 
 
 void Utente::add_product_to_list(std::shared_ptr<Product > product , const string& namelist ,const int qty) {
-
+        bool esito=false;
         for(auto& i:elenco_liste)
-        if (i->getNameOfList() == namelist)
         {
+          if (i->getNameOfList() == namelist){
             i->add_to_list(product, qty);
+            esito=true;
+         }
+        }
+        if(!esito){
+            throw std::invalid_argument("List absent ");
         }
 
 }
@@ -79,12 +89,18 @@ void Utente::add_product_to_list(std::shared_ptr<Product > product , const strin
 
 
 void Utente::remove_product_to_list(std::shared_ptr<Product> product,  string namelist,const int qty) {
-    std::shared_ptr<Lista> result= search_name_list(namelist);
-
-    if(result->getNameOfList()==namelist)
+    bool esito=false;
+    for(auto& j:elenco_liste)
     {
-       result->rem_to_list(product,qty);
+        if (j->getNameOfList() == namelist){
+            j->rem_to_list(product, qty);
+            esito=true;
+        }
     }
+    if(!esito){
+        throw std::invalid_argument("List absent ");
+    }
+
 
 }
 
@@ -155,6 +171,14 @@ cout<<"Utente:"<<this->getNameOfUtente()<<endl;
 cout<<"Liste Aggiornate"<<endl;
 this->print_all_list();
 
+}
+
+const list<shared_ptr<Lista>> &Utente::getElencoListe() const {
+    return elenco_liste;
+}
+
+void Utente::setElencoListe(const list<shared_ptr<Lista>> &elencoListe) {
+    elenco_liste = elencoListe;
 }
 
 

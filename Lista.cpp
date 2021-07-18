@@ -60,7 +60,7 @@ void Lista::rem_to_list(std::shared_ptr<Product >& prod, int qty_to_remove)
 
 
 
-bool Lista::search_into_list(const std::shared_ptr<Product>& prod) {;
+bool Lista::search_into_list(const std::shared_ptr<Product>& prod) {
         for( auto i:lst)
         {
             if (i->getName() == prod->getName())
@@ -97,6 +97,8 @@ void Lista::get_state() {
             std::cout << i->getName() << "->" << i->getQuantity() << "--->" << "Bought" << std::endl;
     }
     std::cout << "-----------------------------------" << std::endl;
+
+
 }
 
 

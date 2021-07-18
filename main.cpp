@@ -18,10 +18,6 @@ int main() {
     utente1->add_a_list(lista1);
     utente1->add_a_list(lista);
 
-
-
-
-
     CategoryProduct Frutta("Frutta");
     shared_ptr<Product> product(new Product("Mela", Frutta));
 

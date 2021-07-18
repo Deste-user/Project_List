@@ -19,11 +19,10 @@ public:
     void create_list( const string name);
     void add_a_list(shared_ptr<Lista> list);
     shared_ptr<Lista> search_name_list(string name);
-
     void delete_list(const string &name);
     void print_all_list();
-    void get_state() override;
 
+    void get_state() override;
     void subscribe(shared_ptr<Observer> A) override;
     void unsubscribe(shared_ptr<Observer> B) override;
     void notify() override;
@@ -36,6 +35,9 @@ public:
     const string &getNameOfUtente() const;
     void setNameOfUtente(const string &nameOfUtente);
 
+    const list<shared_ptr<Lista>> &getElencoListe() const;
+
+    void setElencoListe(const list<shared_ptr<Lista>> &elencoListe);
 
     virtual ~Utente(){}
 
