@@ -162,7 +162,7 @@ void Utente::notify()
 {
     for (auto& i:obs_utente)
     {
-        i->update(this);
+        i->update();
     }
 }
 

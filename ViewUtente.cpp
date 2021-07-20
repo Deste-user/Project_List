@@ -13,9 +13,9 @@ void ViewUtente::detach() {
   subject->unsubscribe(shared_ptr<ViewUtente>(this));
 }
 
-void ViewUtente::update(Subject* sub)
+void ViewUtente::update()
 {
-    sub->get_state();
+    subject->get_state();
 }
 
 

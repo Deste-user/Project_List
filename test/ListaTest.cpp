@@ -49,7 +49,7 @@ CategoryProduct Tools("Tools");
 shared_ptr<Product> prod1 (new Product("Drill",Tools));
 list.add_to_list(prod1,1);
 EXPECT_EQ(list.search_into_list(prod1),true);
-//EXPECT_THROW(list.search_into_list(nullptr),std::invalid_argument);
+
 }
 
 
