@@ -3,16 +3,23 @@
 #include "Utente.h"
 #include "Product.h"
 #include "ViewUtente.h"
-
 #include "CategoryProduct.h"
+
+
 int main() {
-    std::shared_ptr<Utente> utente1(new Utente("Mario"));
-    std::shared_ptr<Utente> utente2(new Utente("Giorgio"));
+    auto utente1= make_shared<Utente>("Mario");
+    auto utente2= make_shared<Utente>("Giorgio");
+
+    shared_ptr<ViewUtente> GUI1= make_shared<ViewUtente>();
+    shared_ptr<ViewUtente> GUI2= make_shared<ViewUtente>();
+
+    GUI1->observe(utente1);
+    GUI2->observe(utente2);
+
     std::shared_ptr<Lista> lista(new Lista("spesa"));
     std::shared_ptr<Lista> lista1(new Lista("Nonna"));
 
-    ViewUtente GUI(utente1);
-    ViewUtente GUI1(utente2);
+
 
     utente2->add_a_list(lista1);
     utente1->add_a_list(lista1);
@@ -29,7 +36,8 @@ int main() {
 
 
 
-    utente1->add_product_to_list(product,"spesa",4);
+    utente1->add_product_to_list(product,"spesa",0);
+    utente1->select_quantity_prod("spesa",product,3);
     utente1->add_product_to_list(product,"spesa",5);
     utente1->add_product_to_list(product1,"spesa",2);
     utente2->add_product_to_list(product2,"Nonna",5);

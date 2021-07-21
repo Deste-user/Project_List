@@ -7,11 +7,8 @@
 #include <memory>
 class Subject;
 
-class Observer{
+class Observer:public enable_shared_from_this<Observer>{
 public:
 virtual void update()=0;
-virtual void attach()=0;
-virtual void detach()=0;
-virtual ~Observer(){};
 };
 #endif //LISTA_OBSERVER_H

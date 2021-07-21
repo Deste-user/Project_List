@@ -23,23 +23,23 @@ public:
     void print_all_list();
 
     void get_state() override;
-    void subscribe(shared_ptr<Observer> A) override;
-    void unsubscribe(shared_ptr<Observer> B) override;
+
+    void subscribe( shared_ptr<Observer> A) override;
+    void unsubscribe( shared_ptr<Observer> B) override;
     void notify() override;
 
     void add_product_to_list(shared_ptr<Product> product, const string& namelist,int qty);
     void remove_product_to_list(shared_ptr<Product> product,string namelist,int qty);
     void buy_a_product(shared_ptr<Product> product,string namelist);
-
+    void select_quantity_prod(string name_list,shared_ptr<Product> prod,int qty);
+    int num_of_list();
 
     const string &getNameOfUtente() const;
     void setNameOfUtente(const string &nameOfUtente);
 
-    const list<shared_ptr<Lista>> &getElencoListe() const;
 
-    void setElencoListe(const list<shared_ptr<Lista>> &elencoListe);
 
-    virtual ~Utente(){}
+     ~Utente()= default;
 
 private:
     string name_of_utente;

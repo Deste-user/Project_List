@@ -11,7 +11,6 @@ public:
     virtual void unsubscribe(std::shared_ptr<Observer> B)=0;
     virtual void get_state()=0;
     virtual void notify()=0;
-    virtual ~Subject(){};
 
 };
 #endif //LISTA_SUBJECT_H

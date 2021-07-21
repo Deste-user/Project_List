@@ -20,7 +20,9 @@ const CategoryProduct &Product::getCategory() const {
 }
 
 void Product::setQuantity(int quantity) {
-    Product::quantity = quantity;
+    if(quantity>=0) {
+        Product::quantity = quantity;
+    } else throw std::invalid_argument("Can't assegn the negative value");
 }
 
 bool Product::isBought() const {

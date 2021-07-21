@@ -8,14 +8,12 @@
 #include "CategoryProduct.h"
 //Data Class
 using namespace std;
-class Product{
+
+class Product {
 public:
-    Product(const string nm,const CategoryProduct catg):name(nm),category(catg) {}
-
-
+    Product(const string nm, const CategoryProduct catg) : name(nm), category(catg) {}
 
     //Getter
-
     const CategoryProduct &getCategory() const;
 
     const string &getName() const;
@@ -30,8 +28,8 @@ public:
 
 private:
     const string name;
-    int quantity=0;
-    bool bought=false;
+    int quantity = 0;
+    bool bought = false;
     //i cound use a string name to delete the useless class CategoryProduct
     const CategoryProduct category;
 };

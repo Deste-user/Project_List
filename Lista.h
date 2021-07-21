@@ -22,23 +22,18 @@ public:
 
     void add_to_list(shared_ptr<Product>& prod,int qty);
     void rem_to_list(shared_ptr<Product>& prod, int qty_to_remove);
-    bool search_into_list(const shared_ptr<Product>& prod);
-    void get_state(); //override;
-    virtual ~Lista(){}
-
+    shared_ptr<Product> search_into_list(const shared_ptr<Product>& prod);
+    void get_state();
+    int num_product_in_list();
+    int num_product_in_list_bought();
 
 
     //Getter&Setter
 
     const string &getNameOfList() const;
-
     void setNameOfList(const string &nameOfList);
 
-    const list<shared_ptr<Product>> &getLst() const;
-
-    void setLst(const list<shared_ptr<Product>> &lst);
-
-
+    ~Lista()=default;
 
 private:
     string name_of_list;

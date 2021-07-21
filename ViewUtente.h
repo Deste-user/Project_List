@@ -11,18 +11,19 @@
 using namespace std;
 class ViewUtente: public Observer {
 public:
-    ViewUtente(  shared_ptr<Utente> utente): subject(move(utente))
-    {
-        attach();
+    ViewUtente(){}
+
+    void observe(const std::shared_ptr<Utente> utente){
+        subject=utente;
+        subject->subscribe(shared_from_this());
     }
 
-    void attach() override;
-    void detach() override;
-    void update() override;
+    void update() override{
+        subject->get_state();
+    }
 
-    ~ViewUtente() override
-    {
-        detach();
+    ~ViewUtente(){
+        subject->unsubscribe(shared_from_this());
     }
 
 private:
