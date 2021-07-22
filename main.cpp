@@ -7,11 +7,17 @@
 
 
 int main() {
-    auto utente1= make_shared<Utente>("Mario");
-    auto utente2= make_shared<Utente>("Giorgio");
+    //auto utente1= make_shared<Utente>("Mario");
+    //auto utente2= make_shared<Utente>("Giorgio");
 
-    shared_ptr<ViewUtente> GUI1= make_shared<ViewUtente>();
-    shared_ptr<ViewUtente> GUI2= make_shared<ViewUtente>();
+    shared_ptr<Utente> utente1(new Utente("Mario"));
+    shared_ptr<Utente> utente2(new Utente("Giorgio"));
+
+    //shared_ptr<ViewUtente> GUI1= make_shared<ViewUtente>();
+    //shared_ptr<ViewUtente> GUI2= make_shared<ViewUtente>();
+
+    shared_ptr<ViewUtente> GUI1(new ViewUtente());
+    shared_ptr<ViewUtente> GUI2(new ViewUtente());
 
     GUI1->observe(utente1);
     GUI2->observe(utente2);
