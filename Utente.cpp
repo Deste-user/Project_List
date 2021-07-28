@@ -55,6 +55,7 @@ void Utente::delete_list(const string &name) {
 
 
 void Utente::add_product_to_list(std::shared_ptr<Product> product, const string &namelist, const int qty) {
+    cout << "Utente:" << getNameOfUtente() << endl;
     bool esito = false;
     for (auto &i:elenco_liste) {
         if (i->getNameOfList() == namelist) {
@@ -69,6 +70,7 @@ void Utente::add_product_to_list(std::shared_ptr<Product> product, const string 
 
 
 void Utente::remove_product_to_list(std::shared_ptr<Product> product, string namelist, const int qty) {
+    cout << "Utente:" << getNameOfUtente() << endl;
     bool esito = false;
     for (auto &j:elenco_liste) {
         if (j->getNameOfList() == namelist) {
@@ -83,6 +85,7 @@ void Utente::remove_product_to_list(std::shared_ptr<Product> product, string nam
 
 
 void Utente::buy_a_product(std::shared_ptr<Product> product, string namelist) {
+    cout << "Utente:" << getNameOfUtente() << endl;
     auto result = search_name_list(namelist);
 
     if (result) {
@@ -146,6 +149,7 @@ void Utente::get_state() {
 }
 
 void Utente::select_quantity_prod(string name_list,shared_ptr<Product> prod,int qty) {
+    cout << "Utente:" << getNameOfUtente() << endl;
     auto result= search_name_list(name_list);
     auto ptr= result->search_into_list(prod);
     ptr->setQuantity(qty);

@@ -5,25 +5,22 @@
 #include "Lista.h"
 #include <memory>
 
-void Lista::add_to_list(std::shared_ptr<Product>& prod,int qty)
-{
-    if(qty>=0){
+void Lista::add_to_list(std::shared_ptr<Product> &prod, int qty) {
+    if (qty >= 0) {
 
-        if (search_into_list(prod))
-      {
-            for (auto i :lst ){
-              if (i->getName() == prod->getName())
-              {
-                i->setQuantity(qty + i->getQuantity());
-              }
+        if (search_into_list(prod)) {
+            for (auto i :lst) {
+                if (i->getName() == prod->getName()) {
+                    i->setQuantity(qty + i->getQuantity());
+                }
             }
-      }else {
+        } else {
             prod->setQuantity(qty);
             lst.push_back(prod);
         }
         get_state();
 
-    }else
+    } else
         throw std::invalid_argument("Can't add a negative number of Products");
 }
 
@@ -78,22 +75,21 @@ void Lista::get_state() {
 
 
 int Lista::num_product_in_list() {
-    int count=0;
-    for(auto i: lst){
+    int count = 0;
+    for (auto i: lst) {
         count++;
     }
     return count;
 }
 
 int Lista::num_product_in_list_bought() {
-    int count=0;
-    for(auto i: lst){
-        if(i->isBought()){
-        count++;
+    int count = 0;
+    for (auto i: lst) {
+        if (i->isBought()) {
+            count++;
         }
     }
     return count;
-
 }
 
 

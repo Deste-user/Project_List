@@ -11,9 +11,7 @@
 using namespace std;
 class ViewUtente: public Observer {
 public:
-    ViewUtente(){
-
-    }
+    ViewUtente() {}
 
     void observe(const std::shared_ptr<Utente> utente){
         subject=utente;
