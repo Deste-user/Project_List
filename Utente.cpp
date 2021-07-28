@@ -18,7 +18,6 @@ void Utente::add_a_list(std::shared_ptr<Lista> list) {
     }
 }
 
-
 std::shared_ptr<Lista> Utente::search_name_list(std::string name) {
     for (auto i: elenco_liste) {
         if (i->getNameOfList() == name) {
@@ -38,7 +37,6 @@ void Utente::print_all_list() {
     } else throw std::invalid_argument("Smart_pointer point to nullptr");
 }
 
-
 void Utente::delete_list(const string &name) {
     bool esito = false;
 
@@ -52,7 +50,6 @@ void Utente::delete_list(const string &name) {
         notify();
     } else throw std::invalid_argument("There is no list with this name");
 }
-
 
 void Utente::add_product_to_list(std::shared_ptr<Product> product, const string &namelist, const int qty) {
     cout << "Utente:" << getNameOfUtente() << endl;
@@ -68,7 +65,6 @@ void Utente::add_product_to_list(std::shared_ptr<Product> product, const string 
     }
 }
 
-
 void Utente::remove_product_to_list(std::shared_ptr<Product> product, string namelist, const int qty) {
     cout << "Utente:" << getNameOfUtente() << endl;
     bool esito = false;
@@ -82,7 +78,6 @@ void Utente::remove_product_to_list(std::shared_ptr<Product> product, string nam
         throw std::invalid_argument("List absent ");
     }
 }
-
 
 void Utente::buy_a_product(std::shared_ptr<Product> product, string namelist) {
     cout << "Utente:" << getNameOfUtente() << endl;
@@ -99,22 +94,10 @@ void Utente::buy_a_product(std::shared_ptr<Product> product, string namelist) {
         throw std::invalid_argument("List absent");
 }
 
-
 int Utente::num_of_list() {
-    int count=0;
-    for(auto i:elenco_liste){
-        count++;
-    }
-    return count;
+    return elenco_liste.size();
 }
-
-
-
-
-
 //Getter and Setter
-
-
 
 const string &Utente::getNameOfUtente() const {
     return name_of_utente;
@@ -123,15 +106,13 @@ const string &Utente::getNameOfUtente() const {
 void Utente::setNameOfUtente(const string &nameOfUtente) {
     name_of_utente = nameOfUtente;
 }
-
 //interfaccia Subject
 
 void Utente::unsubscribe(shared_ptr<Observer> B) {
     obs_utente.remove(B);
 }
 
-
-void Utente::subscribe( shared_ptr<Observer> A) {
+void Utente::subscribe(shared_ptr<Observer> A) {
     obs_utente.push_back(A);
 }
 
@@ -143,15 +124,15 @@ void Utente::notify() {
 
 void Utente::get_state() {
     cout << "Utente:" << this->getNameOfUtente() << endl;
-    cout<<"Numero liste Disponibili:  "<<num_of_list()<<endl;
+    cout << "Numero liste Disponibili:  " << num_of_list() << endl;
     cout << "Liste:" << endl;
     print_all_list();
 }
 
-void Utente::select_quantity_prod(string name_list,shared_ptr<Product> prod,int qty) {
+void Utente::select_quantity_prod(string name_list, shared_ptr<Product> prod, int qty) {
     cout << "Utente:" << getNameOfUtente() << endl;
-    auto result= search_name_list(name_list);
-    auto ptr= result->search_into_list(prod);
+    auto result = search_name_list(name_list);
+    auto ptr = result->search_into_list(prod);
     ptr->setQuantity(qty);
     result->get_state();
 }

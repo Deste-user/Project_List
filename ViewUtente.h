@@ -4,25 +4,27 @@
 
 #ifndef LISTA_CPP_VIEWUTENTE_H
 #define LISTA_CPP_VIEWUTENTE_H
+
 #include "Observer.h"
 #include <memory>
 #include "Utente.h"
 
 using namespace std;
-class ViewUtente: public Observer {
+
+class ViewUtente : public Observer {
 public:
     ViewUtente() {}
 
-    void observe(const std::shared_ptr<Utente> utente){
-        subject=utente;
+    void observe(const std::shared_ptr<Utente> utente) {
+        subject = utente;
         subject->subscribe(shared_from_this());
     }
 
-    void update() override{
+    void update() override {
         subject->get_state();
     }
 
-    ~ViewUtente(){
+    ~ViewUtente() {
         subject->unsubscribe(shared_from_this());
     }
 

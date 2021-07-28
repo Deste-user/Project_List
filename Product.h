@@ -4,6 +4,7 @@
 
 #ifndef LISTA_PRODUCT_H
 #define LISTA_PRODUCT_H
+
 #include <string>
 #include "CategoryProduct.h"
 //Data Class

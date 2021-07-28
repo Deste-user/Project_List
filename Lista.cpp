@@ -24,7 +24,6 @@ void Lista::add_to_list(std::shared_ptr<Product> &prod, int qty) {
         throw std::invalid_argument("Can't add a negative number of Products");
 }
 
-
 void Lista::rem_to_list(std::shared_ptr<Product> &prod, int qty_to_remove) {
     if (qty_to_remove > 0) {
 
@@ -45,7 +44,6 @@ void Lista::rem_to_list(std::shared_ptr<Product> &prod, int qty_to_remove) {
         throw invalid_argument("Can't remove zero product");
     } else throw invalid_argument("Can't add product");
 }
-
 
 shared_ptr<Product> Lista::search_into_list(const std::shared_ptr<Product> &prod) {
     for (auto i:lst) {
@@ -73,13 +71,8 @@ void Lista::get_state() {
     std::cout << "-----------------------------------" << std::endl;
 }
 
-
 int Lista::num_product_in_list() {
-    int count = 0;
-    for (auto i: lst) {
-        count++;
-    }
-    return count;
+    return lst.size();
 }
 
 int Lista::num_product_in_list_bought() {
@@ -91,9 +84,6 @@ int Lista::num_product_in_list_bought() {
     }
     return count;
 }
-
-
-
 //Getter and Setter
 
 const string &Lista::getNameOfList() const {
