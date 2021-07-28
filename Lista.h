@@ -17,7 +17,6 @@ class Lista {
 public:
     explicit Lista(string nm) : name_of_list(nm) {}
 
-
     void add_to_list(shared_ptr<Product> &prod, int qty);
 
     void rem_to_list(shared_ptr<Product> &prod, int qty_to_remove);
@@ -30,9 +29,7 @@ public:
 
     int num_product_in_list_bought();
 
-
     //Getter&Setter
-
     const string &getNameOfList() const;
 
     void setNameOfList(const string &nameOfList);

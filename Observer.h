@@ -4,11 +4,14 @@
 
 #ifndef LISTA_OBSERVER_H
 #define LISTA_OBSERVER_H
+
 #include <memory>
+
 class Subject;
 
-class Observer:public enable_shared_from_this<Observer>{
+class Observer : public enable_shared_from_this<Observer> {
 public:
-virtual void update()=0;
+    virtual void update() = 0;
 };
+
 #endif //LISTA_OBSERVER_H

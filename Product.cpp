@@ -5,8 +5,6 @@
 #include "Product.h"
 
 
-
-
 int Product::getQuantity() const {
     return quantity;
 }
@@ -20,7 +18,7 @@ const CategoryProduct &Product::getCategory() const {
 }
 
 void Product::setQuantity(int quantity) {
-    if(quantity>=0) {
+    if (quantity >= 0) {
         Product::quantity = quantity;
     } else throw std::invalid_argument("Can't assegn the negative value");
 }
